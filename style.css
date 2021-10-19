@@ -1,9 +1,10 @@
 * {
     /* border: solid 1px red; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
-header {
+header { 
     display: flex;
     font-size: 20px;
     margin-bottom: 150px;
@@ -12,16 +13,21 @@ header {
     position: absolute;
     right: 50px;
 }
-
-main h1 {
-    font-size: 50px;
+.intro {
     text-align: center;
     font-weight: bold;
+}
+main h1 {
+    font-size: 50px;
     margin-bottom: 30px;
 
 }
 main p {
-    text-align: center;
     font-size: 25px;
     padding-inline: 400px;
+}
+#startbutton {
+    margin-top: 25px;
+    font-size: 25px;
+    background-color: rgba(117, 43, 117, 0.534);
 }
