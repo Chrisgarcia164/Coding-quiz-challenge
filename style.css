@@ -31,3 +31,6 @@ main p {
     font-size: 25px;
     background-color: rgba(117, 43, 117, 0.534);
 }
+.hide {
+    display: none;
+}
