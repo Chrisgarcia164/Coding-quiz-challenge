@@ -3,7 +3,13 @@ header {
     font-size: 20px;
 
 }
-header p {
+#timedisplayer {
     position: absolute;
     right: 50px;
+}
+
+main h1 {
+    font-size: 50px;
+    text-align: center;
+
 }
