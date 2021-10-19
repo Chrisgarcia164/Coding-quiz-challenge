@@ -1,7 +1,7 @@
 header {
     display: flex;
     font-size: 20px;
-
+    margin-bottom: 150px;
 }
 #timedisplayer {
     position: absolute;
@@ -11,5 +11,11 @@ header {
 main h1 {
     font-size: 50px;
     text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
 
+}
+main p {
+    text-align: center;
+    font-size: 25px;
 }
