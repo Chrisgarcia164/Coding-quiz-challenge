@@ -45,9 +45,23 @@ var answerBtn = document.querySelector('.answers')
 
 var question1 = {
     question: "What is 2+2?",
-    answers: ["2", "4", "6", "8"]
+    answers: [
+                { text: 'IDK', correct: false },
+                { text: '12', correct: false },
+                { text: 'yes', correct: false },
+                { text: '4', correct: true }
+              ]
 }
-console.log(question1.answers.length)
+var question2 = {
+    question: "What is the opposite of up?",
+    answers: [
+                { text: 'left', correct: false },
+                { text: 'down', correct: true },
+                { text: 'yellow', correct: false },
+                { text: 'back', correct: false },
+    ]
+}
+
 // const questions = ["What is 2+2?", "What is", "what isn't"]
 // const answers = [ "4", "5", "6", "7"]
 const questionEL = document.getElementById("question")
@@ -57,7 +71,6 @@ const answerBtnEl = document.getElementById("answer-choices")
 // var answerBtn = document.querySelector(".answers")
 
 startBtn.addEventListener("click", function(){
-    console.log('started game');
     intro.classList.add("hide");
     choices.classList.remove('hide');
     var quizTimer = setInterval(function(){
@@ -73,16 +86,57 @@ startBtn.addEventListener("click", function(){
 })
 function firstQuestion() {
     questionEL.innerText = question1.question;
-    console.log(questionEL)
-   
-    }
     for (var i = 0; i < question1.answers.length; i++) {
         var button = document.createElement("button")
         button.classList.add("answers")
-        button.innerText = question1.answers[i];
-        console.log(button)
+        button.innerText = question1.answers[i].text;
         answerBtnEl.append(button); 
+        button.value = question1.answers[i].correct;
+        console.log(button.value)
     }
-answerBtnEl.addEventListener("click", function(){
-    console.log("hello world")
-})
+    console.log(button.value)
+    answerBtnEl.addEventListener('click', function(event){
+        var selectedAnswer = event.target.value
+        if (selectedAnswer === "true") {
+            alert("you got the right answer");
+            setNextQuestions();
+        }
+        else {
+            alert("You are wrong");
+            setNextQuestions();
+        }
+    })
+    
+}
+// function setNextQuestions() {
+    
+//     questionEL.innerText = question1.question;
+//     for (var i = 0; i < question2.answers.length; i++) {
+//         var button = document.createElement("button")
+//         button.classList.add("answers")
+//         button.innerText = question2.answers[i].text;
+//         answerBtnEl.append(button); 
+//         button.value = question2.answers[i].correct;
+//         console.log(button.value)
+//     }
+//     console.log(button.value)
+//     answerBtnEl.addEventListener('click', function(event){
+//         var selectedAnswer = event.target.value
+//         if (selectedAnswer === "true") {
+//             alert("you got the right answer");
+//             setNextQuestions();
+//         }
+//         else {
+//             alert("You are wrong");
+//             setNextQuestions();
+//         }
+//     })
+    
+// }
+
+// function setAnswers() {
+//     console.log(rightWrong)
+// }
+// answerBtnEl.addEventListener("click", function(){
+//     console.log("hello world")
+// })
