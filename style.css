@@ -58,4 +58,6 @@ main p {
     margin: 20px 0;
     font-size: 25px;
     background-color: rgba(223, 51, 223, 0.308);
+    width: 200px;
+    min-width: fit-content;
 }
