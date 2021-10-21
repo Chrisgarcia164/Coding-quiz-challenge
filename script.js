@@ -108,35 +108,32 @@ function firstQuestion() {
     })
     
 }
-// function setNextQuestions() {
+function setNextQuestions() {
+    while (answerBtnEl.firstChild) {
+        answerBtnEl.removeChild(answerBtnEl.firstChild)
+      }
+    questionEL.innerText = question2.question;
+    for (var i = 0; i < question2.answers.length; i++) {
+        var button = document.createElement("button")
+        button.classList.add("answers")
+        button.innerText = question2.answers[i].text;
+        answerBtnEl.append(button); 
+        button.value = question2.answers[i].correct;
+        console.log(button.value)
+    }
+    console.log(button.value)
+    answerBtnEl.addEventListener('click', function(event){
+        var selectedAnswer = event.target.value
     
-//     questionEL.innerText = question1.question;
-//     for (var i = 0; i < question2.answers.length; i++) {
-//         var button = document.createElement("button")
-//         button.classList.add("answers")
-//         button.innerText = question2.answers[i].text;
-//         answerBtnEl.append(button); 
-//         button.value = question2.answers[i].correct;
-//         console.log(button.value)
-//     }
-//     console.log(button.value)
-//     answerBtnEl.addEventListener('click', function(event){
-//         var selectedAnswer = event.target.value
-//         if (selectedAnswer === "true") {
-//             alert("you got the right answer");
-//             setNextQuestions();
-//         }
-//         else {
-//             alert("You are wrong");
-//             setNextQuestions();
-//         }
-//     })
-    
-// }
 
-// function setAnswers() {
-//     console.log(rightWrong)
-// }
-// answerBtnEl.addEventListener("click", function(){
-//     console.log("hello world")
-// })
+        if (selectedAnswer === "true") {
+            alert("you got the right answer");
+            setNextQuestions();
+        }
+        else {
+            alert("You are wrong");
+            setNextQuestions();
+        }
+    })
+    
+}
