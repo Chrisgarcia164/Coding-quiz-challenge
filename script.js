@@ -152,4 +152,5 @@ function setNextQuestions3() {
 }
 function finalScreen(){
     choices.classList.add('hide');
+    
 }

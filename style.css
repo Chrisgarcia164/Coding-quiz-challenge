@@ -24,7 +24,7 @@ main h1 {
     margin-bottom: 30px;
 
 }
-main p {
+.intro p {
     font-size: 25px;
     padding-inline: 400px;
 }
@@ -61,3 +61,18 @@ main p {
     width: 200px;
     min-width: fit-content;
 }
+#finale {
+    width: 600px;
+    min-width: fit-content;
+    height: 400px;
+    min-height: fit-content;
+}
+#finale p {
+    font-size: 30px;
+    margin-top: 25px;
+}
+#finale h2{
+    font-size: 60px;
+    font-weight: bold;
+}
+
