@@ -75,4 +75,17 @@ main h1 {
     font-size: 60px;
     font-weight: bold;
 }
-
+#ldb {
+    font-size: 60px;
+    font-weight: bold;
+}
+#leaderboards {
+    background-color: #b69b9ba2;
+    padding: 25px;
+    height: 350px;
+}
+.stat{
+    font-size: 30px;
+    margin: 25px 0 25px 0;
+    border-bottom: tomato 3px solid;
+}

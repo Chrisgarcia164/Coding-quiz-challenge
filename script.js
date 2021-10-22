@@ -2,8 +2,23 @@ var startBtn = document.querySelector("#startbutton");
 var timeEl = document.querySelector(".time");
 var intro = document.querySelector(".intro");
 var choices = document.querySelector("#container");
-var timeleft = 10000;
+var timeleft = 60;
 var answerBtn = document.querySelector('.answers')
+var finalEl = document.querySelector('#finale')
+var nameEl = document.querySelector("#fname")
+var submitBtn = document.querySelector("#submit-btn")
+var leaderboard = document.querySelector('#leaderboards')
+var leadorboardBtn = document.querySelector("#view-ldb")
+leadorboardBtn.addEventListener('click', function(){
+    intro.classList.add('hide')
+    leaderboard.classList.remove('hide')
+    var stat = document.createElement("h4")
+    stat.classList.add('stat')
+    var savedInfo = localStorage.getItem('timeStat')
+    stat.innerText = savedInfo
+    leaderboard.append(stat)
+    
+})
 var question1 = {
     question: "What is 2+2?",
     answers: [
@@ -44,22 +59,32 @@ var question4 = {
 
 const questionEL = document.getElementById("question")
 const answerBtnEl = document.getElementById("answer-choices")
+var finishedQuiz = false
 
-
-startBtn.addEventListener("click", function(){
+startBtn.addEventListener("click", function startGame(){
     intro.classList.add("hide");
     choices.classList.remove('hide');
     var quizTimer = setInterval(function(){
         if(timeleft <= 0){
           clearInterval(quizTimer);
           alert("Quiz failed, try again")
+          choices.classList.add('hide')
+          intro.classList.remove('hide')
+          timeleft = 60;
         }
+        // if (finishedQuiz = true){
+        //     clearInterval(quizTimer);
+        // }
         document.getElementById("time-left").innerHTML = timeleft;
         timeleft -= 1;
+        if (finishedQuiz == true){
+            clearInterval(quizTimer);
+        }
       }, 1000);
     
-     firstQuestion()
+    firstQuestion()
 })
+
 function firstQuestion() {
     questionEL.innerText = question1.question;
     for (var i = 0; i < question1.answers.length; i++) {
@@ -76,6 +101,7 @@ function firstQuestion() {
         }
         else {
             alert("You are wrong");
+            timeleft -=10;
         }
         setNextQuestions()
     })
@@ -151,6 +177,26 @@ function setNextQuestions3() {
     })
 }
 function finalScreen(){
+    finishedQuiz = true
+    // document.getElementById("time-left").innerHTML = timeleft;
+    // clearInterval(quizTimer);
+    document.getElementById("final-timer").innerHTML = timeleft;
+    localStorage.setItem('timeLeft', timeleft);
     choices.classList.add('hide');
-    
+    finalEl.classList.remove('hide');
+    submitBtn.addEventListener('click', function(event){
+        var nameSub = document.getElementById('fname').value
+        var nameTime = " got a score of: "
+        var timeStat = nameSub + nameTime + timeleft
+        localStorage.setItem('timeStat', timeStat);
+        finalEl.classList.add("hide")
+        leaderboard.classList.remove('hide')
+        var stat = document.createElement("h4")
+        stat.classList.add('stat')
+        var savedInfo = localStorage.getItem('timeStat')
+        stat.innerText = savedInfo
+        leaderboard.append(stat)
+
+    })
+
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <p>View highscores</p>
+        <button id="view-ldb">View Leaderboards</button>
         <p class="time">Time: <span id="time-left"></span> </p>
     </header>
     <main>
@@ -26,9 +26,17 @@
         </div>
         </div>
         </div>
-        <div id="finale" class="">
+        <div id="finale" class="hide">
             <h2>All done!</h2>
             <p>Your final score is: <span id="final-timer">0</span></p>
+            <input type="text" placeholder="name" id="fname">
+            <button id="submit-btn">Submit</button>
+        </div>
+        <div id="leaderboards" class="">
+            <p id="ldb">This is the leaderboards</p>
+            <!-- <p class="stat">Placeholder</p>
+            <p class="stat">Placeholder</p>
+            <p class="stat">Placeholder</p> -->
         </div>
     </main>
     </div>
