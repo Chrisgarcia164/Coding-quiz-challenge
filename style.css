@@ -89,3 +89,32 @@ main h1 {
     margin: 25px 0 25px 0;
     border-bottom: tomato 3px solid;
 }
+#finale {
+    background-color: #b69b9ba2;
+}
+#finale p {
+    font-size: 40px;
+}
+#fname {
+    font-size: 30px;
+    width: 300px;
+    min-width: fit-content;
+    height: 40px;
+    min-height: fit-content;
+    margin: 30px 30px 0px 5px;
+    border-radius: 5px;
+    border: solid 2px #b69b9b48;
+}
+#finale {
+    padding: 25px;
+    border-radius: 15px;
+    border: solid 4px #b69b9b48;
+}
+#submit-btn {
+    background-color: white;
+    margin-left: 5px;
+    border: solid 2px #b69b9b48;
+    border-radius: 5px;
+    color: rgb(100, 98, 98);
+    width: 150px;
+}
