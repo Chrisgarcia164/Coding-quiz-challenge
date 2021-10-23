@@ -55,8 +55,6 @@ var question4 = {
         { text: '52', correct: false },
     ]
 }
-
-
 const questionEL = document.getElementById("question")
 const answerBtnEl = document.getElementById("answer-choices")
 var finishedQuiz = false
@@ -67,10 +65,8 @@ startBtn.addEventListener("click", function startGame(){
     var quizTimer = setInterval(function(){
         if(timeleft <= 0){
           clearInterval(quizTimer);
-          alert("Quiz failed, try again")
-          choices.classList.add('hide')
-          intro.classList.remove('hide')
-          timeleft = 60;
+          window.location.reload();
+          alert("Sorry, you ran out of time to complete quiz, please try again.")
         }
         // if (finishedQuiz = true){
         //     clearInterval(quizTimer);

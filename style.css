@@ -83,6 +83,7 @@ main h1 {
     background-color: #b69b9ba2;
     padding: 25px;
     height: 350px;
+    border-radius: 10px;
 }
 .stat{
     font-size: 30px;
